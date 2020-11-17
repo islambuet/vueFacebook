@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import router from '@/router'
+//import router from '@/router'
 
 function initial_data()
 {
@@ -17,7 +17,7 @@ function initial_data()
     },
     visitors:{
       tasks:[]
-    },
+    }, 
     status_task_loaded:0,    //Loading=0,success=1,failed=-1,acceesdenied=-2,siteoffline=-3  for all page
     status_data_loaded:0,    //Loading=0,loaded=1
     labels:{},
@@ -37,9 +37,9 @@ var system_variables= new Vue(
           localStorage.setItem('token_auth','');
           localStorage.setItem('token_csrf','');
           this.user=initial_data().user;
-          if(router.path != '/login')
+          if(router.path != '/')
           {
-            router.push("/login");
+            router.push("/");
             return;
           }
         }
