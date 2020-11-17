@@ -44,8 +44,25 @@ export default {
     init: function()
     {
       this.status_site_loaded=1;      
-      this.$system_variables.status_data_loaded=1;      
-      
+      this.$system_variables.status_data_loaded=1;  
+      window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '1058716664575670',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v9.0'
+          });
+            
+          FB.AppEvents.logPageView();   
+            
+        };
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
     },
     
   },

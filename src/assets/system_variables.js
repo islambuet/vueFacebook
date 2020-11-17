@@ -1,5 +1,5 @@
 import Vue from 'vue'
-//import router from '@/router'
+import router from '@/router'
 
 function initial_data()
 {
@@ -12,6 +12,7 @@ function initial_data()
       token_device:localStorage.getItem('token_device')? localStorage.getItem('token_device'):'',
       id: 0,
       name:language=='en'?'Guest':'অতিথি',
+      profile_picture:"",
       info:{},
       tasks:[]
     },
@@ -37,7 +38,8 @@ var system_variables= new Vue(
           localStorage.setItem('token_auth','');
           localStorage.setItem('token_csrf','');
           this.user=initial_data().user;
-          if(router.path != '/')
+          //console.log(router.path);
+          if(router.path && router.path!= '/')
           {
             router.push("/");
             return;
