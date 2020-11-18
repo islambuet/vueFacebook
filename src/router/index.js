@@ -4,6 +4,7 @@ Vue.use(VueRouter)
 
 const routes = [
   { path: '/', name: 'Home', component: () => import('@/components/home/Home.vue') },
+  { path: '/post', name: 'Post', component: () => import('@/components/post/Post.vue') },
   { path: '*',name:'NotFound',component: function () {return import('@/components/not_found/NotFound.vue')}}
 ]
 

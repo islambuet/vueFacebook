@@ -38,11 +38,10 @@ var system_variables= new Vue(
           localStorage.setItem('token_auth','');
           localStorage.setItem('token_csrf','');
           this.user=initial_data().user;
-          //console.log(router.path);
-          if(router.path && router.path!= '/')
+          if(router.history.current.path!= '/')
           {
             router.push("/");
-            return;
+            
           }
         }
       }
